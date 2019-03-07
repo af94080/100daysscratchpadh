@@ -1,0 +1,61 @@
+>>> import json
+>>> with open('mount-data.json') as f:
+...     data = json.load(f)
+
+>>> from pprint import pprint
+
+
+#1
+
+# from
+# https://training.talkpython.fm/player/course/100-days-of-code-in-python/lecture/161505
+
+>>> for key in data.keys():
+...     pprint(key)
+... 
+'achievementPoints'
+'name'
+'mounts'
+'lastModified'
+'race'
+'battlegroup'
+'realm'
+'class'
+'gender'
+'thumbnail'
+'totalHonorableKills'
+'faction'
+'level'
+'calcClass'
+
+#2
+
+>>> for k, v in data.items():
+...     print(type(v))
+... 
+<class 'int'>
+<class 'str'>
+<class 'dict'>
+<class 'int'>
+<class 'int'>
+<class 'str'>
+<class 'str'>
+<class 'int'>
+<class 'int'>
+<class 'str'>
+<class 'int'>
+<class 'int'>
+<class 'int'>
+<class 'str'>
+
+#3
+
+>>> for k, v in data.items():
+...     if isinstance(v, dict):
+...             for k2, v2 in v.items():
+...                     print(k2, type(v2))
+... 
+numCollected <class 'int'>
+collected <class 'list'>
+numNotCollected <class 'int'>
+
